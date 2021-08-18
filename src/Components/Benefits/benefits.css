@@ -1,0 +1,121 @@
+/*Benefits style start*/
+
+.benefits{
+	margin-bottom: 131px; /*отступы между блоками*/
+}
+.benefits__wrap{
+	max-width: 1260px;
+	background-color: #FFFFFF;
+	margin: 0 auto;
+	-webkit-box-shadow: 0px 2px 20px rgba(21, 24, 36, 0.15993);
+	        box-shadow: 0px 2px 20px rgba(21, 24, 36, 0.15993); /*создание тени для элемента*/
+	position: relative; /*для title=absolute указать для родителя*/
+}
+.benefits__title{
+	width: 100%;
+	font-weight: 500;
+	font-size: 35px;
+	line-height: 42px;
+	padding: 93px 100px 88px 100px;
+	position: absolute;
+	top: 20px;
+	left: 0;
+	-webkit-transform: translateY(-100%);
+	    -ms-transform: translateY(-100%);
+	        transform: translateY(-100%); /*сдвигаем элемент по Y на 100% его собственной высоты, "-"для сдвига вверх*/
+	background-color: #FFFFFF;
+
+}
+.benefits__cards{
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: 1fr 55px 1fr 55px 1fr;
+	grid-template-columns: repeat(3, 1fr); /*разделяем блок на 3 колонки*/
+	-webkit-column-gap: 55px;
+	   -moz-column-gap: 55px;
+	        column-gap: 55px; /*отступы между колонками*/
+	padding: 0 100px; /*выравневание по левому краю*/
+}
+.benefits__card{
+	-ms-grid-column-span: 1;
+	grid-column: span 1;/*ширина карточек по 1 колонки задаем явным образом*/
+	margin-top: 32px;
+	margin-bottom: 112px; /*отступы после карточек*/
+}
+.benefits__card-pic{
+	max-width: 66px;
+	margin-bottom: 37px;
+}
+.benefits__card-thumb{
+	display: block;/*убрать отступы*/
+}
+.benefits__card-title{
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 24px;
+	margin-bottom: 26px;
+}
+.benefits__card-desc{
+	font-size: 16px;
+	line-height: 24px;
+	margin-bottom: 39px;/*для отступа между элементами*/
+}
+.benefits__card-more{
+	display: inline-block;
+	padding-right: 59px;
+	font-size: 16px;
+	line-height: 24px;
+	color: #006DFE;
+	text-decoration: none;/*убрать черту под ссылкой*/
+	background: url(../../img/svg/arrow-icon.svg) no-repeat 95% center; /*указан в качестве background, но можно сделать через псевдоэлемент, с анимацией*/
+	-webkit-transition: .2s all;
+	-o-transition: .2s all;
+	transition: .2s all; /*делает более плавный сдвиг срелки*/
+}
+.benefits__card-more:hover, .benefits__card-more:focus{
+	background: url(../../img/svg/arrow-icon.svg) no-repeat right center;
+}
+/*Benefits style end*/
+
+@media screen and (max-width: 960px) {
+	.benefits{
+		margin-bottom: 75px;
+	}
+	.benefits__card{
+		margin-bottom: 60px;
+	}
+	.benefits__cards{
+		padding: 0 15px;
+		-webkit-column-gap: 35px;
+		   -moz-column-gap: 35px;
+		        column-gap: 35px;
+	}
+	.benefits__title{
+		padding: 55px 15px;
+	}
+	.benefits__wrap{
+		-webkit-box-shadow: none;
+		        box-shadow: none;
+	}
+}
+
+@media screen and (max-width: 767px){
+	.benefits{
+		margin-bottom: 36px;
+	}
+	.benefits__card{
+		-ms-grid-column-span: 3;
+		grid-column: span 3;
+		margin-bottom: 40px;
+		margin-top: 0;
+	}
+	.benefits__card-pic{
+		margin-bottom: 20px;
+	}
+	.benefits__card-title{
+		margin-bottom: 12px;
+	}
+	.benefits__card-desc{
+		margin-bottom: 20px;
+	}
+}

@@ -1,0 +1,123 @@
+/*Places style start*/
+.places{
+	margin-bottom: 131px; /*создаем отступ*/
+}
+.places__caption{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	margin-bottom: 46px;
+}
+.places__title{
+	margin-right: 15px;
+}
+.places__view-all{
+	font-size: 16px;
+	color: #006DFE;
+	text-decoration: none;
+	padding-right: 59px;
+	background: url(../../img/svg/arrow-icon.svg) no-repeat right center;
+}
+.places__view-all:hover, .places__view-all:focus{
+	opacity: .65;
+}
+.places__cards{
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr 10px 1fr;
+	grid-template-columns: repeat(6, 1fr);
+	-webkit-column-gap: 10px;
+	   -moz-column-gap: 10px;
+	        column-gap: 10px;
+	row-gap: 10px;
+}
+.places__card{
+	position: relative;
+	overflow: hidden; /*чтобы картинка при наведении и увеличении не выходила за указанные рамки*/
+}
+.places__card:hover .places__card-pic{
+	-webkit-transform: scale(1.05);
+	    -ms-transform: scale(1.05);
+	        transform: scale(1.05); /*при наведении на картинку она увеличивается в размере*/
+}
+.places__card::after{ /*псевдоэлемент, можно использовать before*/
+	display: block;
+	content: '';
+	width: 100%;
+	height: 100%;
+	background-color: rgba(21, 24, 36, 0.4);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2;
+}
+.places__card-title{
+	font-size: 50px;
+	line-height: 60px;
+	color: #FFFFFF;
+	position: absolute;
+	bottom: 27px;
+	left: 29px;
+	z-index: 3;
+}
+.places__card-size-lg{
+	-ms-grid-column-span: 3;
+	grid-column: span 3;
+}
+.places__card-size-sm{
+	-ms-grid-column-span: 2;
+	grid-column: span 2;
+}
+.places__card-pic{
+	width: 100%; 	/*еще один вариант:-  transform: scale();, но при этом для контейнера places__card прописать:- 	overflow: hidden;*/
+	-webkit-transition: .15s all;
+	-o-transition: .15s all;
+	transition: .15s all; /*для плавного увеличения картинок*/
+}
+.places__card-pic-size-lg{
+	height: 354px; /*жесткое указание высоты*/
+	-o-object-fit: cover;
+	   object-fit: cover; /*как объект будет масштабироваться внутри контейнера*/
+}
+.places__card-pic-size-sm{
+	height: 283px; /*жесткое указание высоты*/
+	-o-object-fit: cover;
+	   object-fit: cover; /*как объект будет масштабироваться внутри контейнера*/
+}
+.places__card-link{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 4; /*самый верхний слой у на card*/
+}
+/*Places style end*/
+
+@media screen and (max-width: 960px) {
+	.places__card-size-lg{
+		-ms-grid-column-span: 6;
+		grid-column: span 6;
+	}
+	.places__card-size-sm{
+		-ms-grid-column-span: 6;
+		grid-column: span 6;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.places{
+		margin-bottom: 76px;
+	}
+	.places__card-pic-size-lg, .places__card-pic-size-sm{
+		height: 230px;
+	}
+}

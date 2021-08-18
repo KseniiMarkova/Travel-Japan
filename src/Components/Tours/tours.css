@@ -1,0 +1,79 @@
+/*Tours style start*/
+.tours{
+	margin-bottom: 139px;
+}
+.tours__tour{
+	display: -ms-grid;
+	display: grid;
+	-ms-grid-columns: 1fr 108px 1fr;
+	grid-template-columns: repeat(2, 1fr);
+	-webkit-column-gap: 108px;
+	   -moz-column-gap: 108px;
+	        column-gap: 108px; /* расстояние между элементами: 0 - горизонталь, 108 - вертикаль */
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center; /*выравнивание элементов вертикально по центру*/
+	margin-bottom: 77px;
+}
+.tour__info{
+	padding-left: 47px;
+}
+.tour__title{
+	font-weight: 500;
+	font-size: 30px;
+	line-height: 40px;
+	margin-bottom: 85px;
+}
+.tour__desc{
+	font-size: 16px;
+	line-height: 24px;
+	margin-bottom: 58px;
+}
+.tour__link{
+	font-size: 16px;
+	color: #006DFE;
+	text-decoration: none;
+	padding-right: 59px;
+	background: url(../../img/svg/arrow-icon.svg) no-repeat right center;
+}
+.tour__link:hover, .tour__link:focus{
+	opacity: .65;
+}
+/*Tours style end*/
+
+@media screen and (max-width: 960px) {
+	.tours__tour{
+		-webkit-column-gap: 25px;
+		   -moz-column-gap: 25px;
+		        column-gap: 25px;
+	}
+	.tour__info{
+		padding-left: 0;
+	}
+	.tour__title{
+		margin-bottom: 15px;
+	}
+	.tour__desc{
+		margin-bottom: 15px;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.tours{
+		margin-bottom: 76px;
+	}
+	.tour__pic, .tour__info{
+		-ms-grid-column-span: 2;
+		grid-column: span 2;
+	}
+	.tour__pic{
+		margin-bottom: 12px;
+	}
+	.tour__pic_mob-first{
+		-ms-grid-row: -1;
+		    grid-row-start: -1;
+	}
+	.tours__tour{
+		margin-bottom: 50px;
+	}
+}
